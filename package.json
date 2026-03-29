@@ -1,0 +1,45 @@
+{
+  "name": "@yamaru-eu/hardware-probe",
+  "version": "1.0.3",
+  "description": "Official Yamaru Hardware Probe — MCP local agent for hardware inventory and AI diagnostics",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "yamaru-probe": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamaru-eu/hardware-probe.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "inspector": "mcp-inspector node dist/index.js",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "systeminformation": "^5.23.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.21.1",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
