@@ -6,11 +6,10 @@ import { AppConfig } from "./types.js";
  */
 export const CONFIG: AppConfig = {
   // Remote API URL, removing trailing slashes and the '/recommend' path if accidentally provided
-  // Defaults to official api.yamaru.eu subdomain
-  remoteApiUrl: (process.env.REMOTE_API_URL || "https://api.yamaru.eu/api").replace(/\/recommend\/?$/, "").replace(/\/$/, ""),
+  remoteApiUrl: (process.env.REMOTE_API_URL || "http://localhost:3001/api").replace(/\/recommend\/?$/, "").replace(/\/$/, ""),
   
   serverName: "yamaru-hardware-probe",
-  serverVersion: "1.0.3",
+  serverVersion: "1.0.1",
 };
 
 /**
