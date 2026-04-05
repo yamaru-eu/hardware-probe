@@ -1,0 +1,9 @@
+{
+  "name": "hardware-probe",
+  "version": "1.0.3",
+  "description": "Expert system hardware probe for AI, Gaming, and High-Performance workflows. Beyond simple specs, it analyzes GPU (VRAM), Memory Bandwidth, and Runtimes (CUDA, WSL2, Docker). Detects performance bottlenecks and provides actionable software configuration fixes plus hardware upgrade recommendations to optimize your local environment.",
+  "author": "Yamaru Project <contact@yamaru.eu>",
+  "skills": [
+    "./skills/local-inference-optimizer/SKILL.md"
+  ]
+}

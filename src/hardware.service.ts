@@ -1,10 +1,13 @@
 import si from "systeminformation";
 import { SystemSpecs, PerformanceStatus } from "./types.js";
+import { InferenceScanner } from "./scanner.service.js";
 
 /**
  * Service for interacting with system hardware information.
  */
 export class HardwareService {
+  private scanner = new InferenceScanner();
+
   /**
    * Captures real-time performance metrics.
    */
@@ -131,6 +134,29 @@ export class HardwareService {
         ...specs.os,
         locale
       }
+    };
+  }
+
+  /**
+   * Performs deep analysis of the system for LLM inference optimization.
+   */
+  async getInferenceOptimData(): Promise<any> {
+    const [gpu, bandwidth, runtimes] = await Promise.all([
+      this.scanner.scanGPU(),
+      this.scanner.estimateBandwidth(),
+      this.scanner.scanRuntimes()
+    ]);
+
+    const envVars = this.scanner.scanEnvVars();
+
+    return {
+      gpu: gpu.value,
+      gpu_detection_method: gpu.method,
+      gpu_trust_level: gpu.trust,
+      memory_bandwidth_gbs: bandwidth.value,
+      runtimes,
+      environment_variables: envVars,
+      timestamp: new Date().toISOString()
     };
   }
 

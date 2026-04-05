@@ -25,7 +25,8 @@
     "dev": "tsx src/index.ts",
     "inspector": "mcp-inspector node dist/index.js",
     "test": "vitest run",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
