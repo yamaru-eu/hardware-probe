@@ -10,7 +10,7 @@ export const CONFIG: AppConfig = {
   remoteApiUrl: (process.env.REMOTE_API_URL || "https://api.yamaru.eu/api").replace(/\/recommend\/?$/, "").replace(/\/$/, ""),
   
   serverName: "yamaru-hardware-probe",
-  serverVersion: "1.0.3",
+  serverVersion: "1.0.4",
 };
 
 /**

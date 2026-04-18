@@ -1,3 +1,8 @@
+---
+name: local-inference-optimizer
+description: Expert system for analyzing local hardware/software topology and providing actionable recommendations for LLM inference.
+---
+
 # Skill: Local Inference Optimizer
 
 Expert system for analyzing local hardware/software topology and providing actionable recommendations for LLM inference (Ollama, LM Studio, vLLM).

@@ -1,15 +1,16 @@
 {
   "name": "hardware-probe",
-  "version": "1.0.3",
-  "description": "Expert system hardware probe for AI, Gaming, and High-Performance workflows. Beyond simple specs, it analyzes GPU (VRAM), Memory Bandwidth, and Runtimes (CUDA, WSL2, Docker). Detects performance bottlenecks and provides actionable software configuration fixes plus hardware upgrade recommendations to optimize your local environment.",
+  "version": "1.0.4",
+  "description": "Expert system hardware probe and performance diagnostic engine. Beyond simple inventory, it provides real-time monitoring of CPU/RAM load, detects thermal throttling, and analyzes GPU capabilities (VRAM, Bandwidth) for AI workloads. It offers actionable troubleshooting for system slowness and expert recommendations for local LLM optimization (Ollama, CUDA, Metal).",
   "author": "Yamaru Project <contact@yamaru.eu>",
   "mcpServers": {
     "yamaru-probe": {
-      "command": "npx",
-      "args": ["-y", "@yamaru-eu/hardware-probe"]
+      "command": "node",
+      "args": ["/Users/florentmas/env_dev/perso/claw/mcp-local-client/dist/index.js"]
     }
   },
   "skills": [
-    "./skills/local-inference-optimizer/SKILL.md"
+    "/Users/florentmas/env_dev/perso/claw/mcp-local-client/skills/using-hardware-probe/SKILL.md",
+    "/Users/florentmas/env_dev/perso/claw/mcp-local-client/skills/local-inference-optimizer/SKILL.md"
   ]
 }
