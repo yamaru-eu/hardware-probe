@@ -10,7 +10,10 @@
     }
   },
   "skills": [
-    "/Users/florentmas/env_dev/perso/claw/hardware-probe/skills/using-hardware-probe/SKILL.md",
-    "/Users/florentmas/env_dev/perso/claw/hardware-probe/skills/local-inference-optimizer/SKILL.md"
+    "skills/hardware-performance-expert/SKILL.md",
+    "skills/local-inference-optimizer/SKILL.md",
+    "skills/database-expert/SKILL.md",
+    "skills/devops-ops/SKILL.md",
+    "skills/expert-llmfit/SKILL.md"
   ]
 }
