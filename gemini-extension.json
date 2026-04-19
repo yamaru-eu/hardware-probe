@@ -11,9 +11,6 @@
   },
   "skills": [
     "skills/hardware-performance-expert/SKILL.md",
-    "skills/local-inference-optimizer/SKILL.md",
-    "skills/database-expert/SKILL.md",
-    "skills/devops-ops/SKILL.md",
-    "skills/expert-llmfit/SKILL.md"
+    "skills/local-inference-optimizer/SKILL.md"
   ]
 }
