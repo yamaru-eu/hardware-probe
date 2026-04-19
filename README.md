@@ -1,6 +1,10 @@
 # Yamaru Hardware Probe (MCP)
 
-[![Expert System](https://img.shields.io/badge/Expert-Hardware%20%26%20Performance-blueviolet)](https://www.yamaru.eu)
+[![NPM Version](https://img.shields.io/npm/v/@yamaru-eu/hardware-probe?color=blue&logo=npm)](https://www.npmjs.com/package/@yamaru-eu/hardware-probe)
+[![NPM Downloads](https://img.shields.io/npm/dw/@yamaru-eu/hardware-probe?logo=npm)](https://www.npmjs.com/package/@yamaru-eu/hardware-probe)
+[![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.yamaru--eu%2Fhardware--probe-blueviolet?logo=planetscale)](https://modelcontextprotocol.io/)
+[![Awesome MCP](https://awesome.re/badge.svg)](https://github.com/modelcontextprotocol/servers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Expert system hardware probe and performance diagnostic engine for AI, Gaming, and High-Performance workflows. This is a Model Context Protocol (MCP) server that provides deep system insights beyond simple specifications.
