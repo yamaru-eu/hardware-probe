@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5] - 2026-04-19
+
+### Added
+- **New Tool: `monitor_system_health`**: Time-bound statistical monitoring (min/max/avg) for CPU, RAM, and Thermals.
+- **Advanced Diagnostics**: Added `analyze_ram_pressure`, `check_storage_health`, `thermal_profile`, and `diagnose_antivirus_impact`.
+- **System Health Skill Updates**: Integrated all new tools into the `hardware-performance-expert` skill protocol.
+- **Improved Monitoring**: Added support for detecting EDR/Antivirus impact on development hot paths.
+
+### Changed
+- **BETA Status**: Marked `check_llm_compatibility` and `get_llm_recommendations` as **BETA** as they depend on a remote API connection.
+
 ## [1.0.4] - 2026-04-18
 
 ### Added

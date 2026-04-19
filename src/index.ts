@@ -81,7 +81,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: "check_llm_compatibility",
-        description: "Checks if a specific LLM model can run on this machine. Returns optimal quantization and estimated tokens per second.",
+        description: "(BETA) Checks if a specific LLM model can run on this machine. Returns optimal quantization and estimated tokens per second. Requires remote API connection.",
         inputSchema: {
           type: "object",
           properties: {
@@ -92,12 +92,43 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: "get_llm_recommendations",
-        description: "Recommends the best LLM models that can run locally on this machine.",
+        description: "(BETA) Recommends the best LLM models that can run locally on this machine. Requires remote API connection.",
         inputSchema: {
           type: "object",
           properties: {
             use_case: { type: "string", enum: ["general", "coding", "reasoning", "chat"], description: "Use case" },
             limit: { type: "number", description: "Max recommendations" }
+          }
+        }
+      },
+      {
+        name: "analyze_ram_pressure",
+        description: "Reports current memory pressure: total/used/free/available memory, swap usage, and top processes by RSS.",
+        inputSchema: { type: "object", properties: {}, required: [] },
+      },
+      {
+        name: "check_storage_health",
+        description: "Reports per-disk health: type (NVMe/SSD/HDD), vendor, temperature, SMART status, and firmware.",
+        inputSchema: { type: "object", properties: {}, required: [] },
+      },
+      {
+        name: "thermal_profile",
+        description: "Reports current CPU and GPU thermal and frequency state: temperature, utilization, and fan speed.",
+        inputSchema: { type: "object", properties: {}, required: [] },
+      },
+      {
+        name: "diagnose_antivirus_impact",
+        description: "Detects running antivirus/EDR products and reads their exclusion rules. Checks dev hot paths coverage.",
+        inputSchema: { type: "object", properties: {}, required: [] },
+      },
+      {
+        name: "monitor_system_health",
+        description: "Monitors system metrics (CPU, RAM, Thermal) over a specified duration and returns statistical summary. Useful for diagnosing transient issues during high-load tasks.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            duration_seconds: { type: "number", description: "Monitoring duration in seconds (max 60)", default: 10 },
+            interval_seconds: { type: "number", description: "Sampling interval in seconds", default: 2 }
           }
         }
       },
@@ -144,6 +175,34 @@ server.setRequestHandler(CallToolRequestSchema, async (request): Promise<CallToo
         const { use_case, limit } = args as { use_case?: string; limit?: number };
         const specs = await hardware.getAnonymizedSpecs();
         const data = await api.getLlmRecommendations(specs, use_case, limit);
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      }
+
+      case "analyze_ram_pressure": {
+        const data = await hardware.getRamPressure();
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      }
+
+      case "check_storage_health": {
+        const data = await hardware.getStorageHealth();
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      }
+
+      case "thermal_profile": {
+        const data = await hardware.getThermalProfile();
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      }
+
+      case "diagnose_antivirus_impact": {
+        const data = await hardware.getAntivirusImpact();
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      }
+
+      case "monitor_system_health": {
+        const { duration_seconds = 10, interval_seconds = 2 } = args as { duration_seconds?: number; interval_seconds?: number };
+        const duration = Math.min(Math.max(1, duration_seconds), 60);
+        const interval = Math.min(Math.max(1, interval_seconds), duration);
+        const data = await hardware.monitorSystemHealth(duration, interval);
         return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
       }
 

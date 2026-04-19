@@ -1,6 +1,6 @@
 {
   "name": "@yamaru-eu/hardware-probe",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Expert system hardware probe and performance diagnostic engine. Real-time monitoring, thermal analysis, and LLM optimization.",
   "type": "module",
   "main": "dist/index.js",
@@ -26,6 +26,7 @@
     "inspector": "mcp-inspector node dist/index.js",
     "test": "vitest run",
     "lint": "tsc --noEmit",
+    "mcp:install": "gemini extension uninstall hardware-probe || true && gemini extension install .",
     "prepublishOnly": "npm run build && npm test"
   },
   "dependencies": {

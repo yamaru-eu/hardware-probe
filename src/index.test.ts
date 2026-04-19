@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-describe("mcp-local-client", () => {
+describe("hardware-probe", () => {
   it("should have a basic sanity check", () => {
     expect(true).toBe(true);
   });

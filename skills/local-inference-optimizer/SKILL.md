@@ -36,6 +36,10 @@ Use this skill when a user wants to:
 - **Docker:** If `hasNvidiaRuntime` is false, provide the `nvidia-container-toolkit` installation steps.
 - **Environment:** If `OLLAMA_NUM_PARALLEL` is missing, suggest setting it to 2 for multi-agent workflows.
 
+### 4. Hardware Health (Thermals & Storage)
+- **Thermals:** If inference starts fast but slows down over time, call `thermal_profile` to check for frequency clipping or overheating.
+- **Storage:** If model loading is slow, call `check_storage_health` to verify if the model is on a slow HDD vs NVMe SSD.
+
 ## Recommended Action Phrases
 - "Your GPU driver version ({{driver}}) is outdated. Update to 550+ to enable Flash Attention."
 - "I detected you are running on a slow HDD. Moving your model cache to your NVMe SSD will reduce load time from 30s to 2s."

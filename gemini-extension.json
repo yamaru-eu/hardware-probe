@@ -6,11 +6,11 @@
   "mcpServers": {
     "yamaru-probe": {
       "command": "node",
-      "args": ["/Users/florentmas/env_dev/perso/claw/mcp-local-client/dist/index.js"]
+      "args": ["/Users/florentmas/env_dev/perso/claw/hardware-probe/dist/index.js"]
     }
   },
   "skills": [
-    "/Users/florentmas/env_dev/perso/claw/mcp-local-client/skills/using-hardware-probe/SKILL.md",
-    "/Users/florentmas/env_dev/perso/claw/mcp-local-client/skills/local-inference-optimizer/SKILL.md"
+    "/Users/florentmas/env_dev/perso/claw/hardware-probe/skills/using-hardware-probe/SKILL.md",
+    "/Users/florentmas/env_dev/perso/claw/hardware-probe/skills/local-inference-optimizer/SKILL.md"
   ]
 }

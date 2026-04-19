@@ -42,4 +42,22 @@ describe("HardwareService", () => {
       expect(typeof anonymized.os.locale).toBe('string');
     });
   });
+
+  describe("monitorSystemHealth", () => {
+    it("should return a monitoring report with statistical data", async () => {
+      const report = await service.monitorSystemHealth(2, 1);
+      
+      expect(report.durationSeconds).toBe(2);
+      expect(report.intervalSeconds).toBe(1);
+      expect(report.samples).toBeGreaterThanOrEqual(1);
+      
+      expect(report.cpu).toHaveProperty("minLoad");
+      expect(report.cpu).toHaveProperty("maxLoad");
+      expect(report.cpu).toHaveProperty("avgLoad");
+      
+      expect(report.ram).toHaveProperty("minUsedPercent");
+      expect(report.ram).toHaveProperty("maxUsedPercent");
+      expect(report.ram).toHaveProperty("avgUsedPercent");
+    });
+  });
 });

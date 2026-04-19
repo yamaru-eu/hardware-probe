@@ -38,8 +38,13 @@ Add this to your MCP settings file (e.g., `npx-config.json` or `claude_desktop_c
 
 - `analyze_local_system`: Full hardware inventory.
 - `analyze_performance`: Real-time performance metrics and top processes.
-- `check_llm_compatibility`: Predicts performance for a specific LLM model.
-- `get_llm_recommendations`: Recommends the best local models for your hardware.
+- `analyze_ram_pressure`: Detailed memory pressure and RSS analysis for deep RAM troubleshooting.
+- `check_storage_health`: Disk SMART health, firmware, and I/O bottleneck analysis.
+- `thermal_profile`: Real-time CPU/GPU thermal states, fan speeds, and frequency throttling detection.
+- `diagnose_antivirus_impact`: Detects EDR/Antivirus conflicts and exclusion coverage on dev paths.
+- `monitor_system_health`: Statistical health report (min/max/avg) over a specified duration.
+- `check_llm_compatibility` **(BETA)**: Predicts performance for a specific LLM model via remote API.
+- `get_llm_recommendations` **(BETA)**: Recommends the best local models via remote API.
 - `analyze_inference_config`: Deep-dive into AI runtimes and environment variables.
 
 ## Skills Integration
