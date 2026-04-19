@@ -1,6 +1,6 @@
 {
   "name": "@yamaru-eu/hardware-probe",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "Expert system hardware probe and performance diagnostic engine. Real-time monitoring, thermal analysis, and LLM optimization.",
   "type": "module",
   "main": "dist/index.js",
