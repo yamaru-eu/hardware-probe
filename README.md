@@ -46,7 +46,7 @@ Add this to your MCP settings file (e.g., `npx-config.json` or `claude_desktop_c
 - `check_storage_health`: Disk SMART health, firmware, and I/O bottleneck analysis.
 - `thermal_profile`: Real-time CPU/GPU thermal states, fan speeds, and frequency throttling detection.
 - `diagnose_antivirus_impact`: Detects EDR/Antivirus conflicts and exclusion coverage on dev paths.
-- `monitor_system_health`: Statistical health report (min/max/avg) over a specified duration.
+- `monitor_system_health`: Statistical health report (CPU load, RAM usage, temperature) with min/max/avg over a configurable time window (up to 10 minutes).
 - `check_llm_compatibility` **(BETA)**: Predicts performance for a specific LLM model via remote API.
 - `get_llm_recommendations` **(BETA)**: Recommends the best local models via remote API.
 - `analyze_inference_config`: Deep-dive into AI runtimes and environment variables.

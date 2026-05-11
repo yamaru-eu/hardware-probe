@@ -123,11 +123,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: "monitor_system_health",
-        description: "Monitors system metrics (CPU, RAM, Thermal) over a specified duration and returns statistical summary. Useful for diagnosing transient issues during high-load tasks.",
+        description: "Monitors system metrics (CPU load, RAM usage, CPU temperature) over a configurable duration (up to 10 minutes) and returns min/max/avg statistics. Use duration_seconds to set the observation window and interval_seconds to control sampling granularity.",
         inputSchema: {
           type: "object",
           properties: {
-            duration_seconds: { type: "number", description: "Monitoring duration in seconds (max 60)", default: 10 },
+            duration_seconds: { type: "number", description: "Monitoring duration in seconds (1-600)", default: 10 },
             interval_seconds: { type: "number", description: "Sampling interval in seconds", default: 2 }
           }
         }
@@ -200,7 +200,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request): Promise<CallToo
 
       case "monitor_system_health": {
         const { duration_seconds = 10, interval_seconds = 2 } = args as { duration_seconds?: number; interval_seconds?: number };
-        const duration = Math.min(Math.max(1, duration_seconds), 60);
+        const duration = Math.min(Math.max(1, duration_seconds), 600);
         const interval = Math.min(Math.max(1, interval_seconds), duration);
         const data = await hardware.monitorSystemHealth(duration, interval);
         return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };

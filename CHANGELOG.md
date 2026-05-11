@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2026-05-11
+
+### Changed
+- **Extended Monitoring Window**: `monitor_system_health` now supports up to 600 seconds (10 minutes) observation window, up from 60 seconds.
+- **Improved Tool Descriptions**: Enriched MCP tool description for `monitor_system_health` with explicit parameter documentation.
+
 ## [1.1.2] - 2026-04-19
 
 ### Changed

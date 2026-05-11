@@ -33,6 +33,7 @@ npm start         # Lancer depuis dist/ (après build)
 | `analyze_ram_pressure`       | Mémoire + swap + top 10 processus par RSS. Faits bruts uniquement.         |
 | `check_storage_health`       | Par disque : type, taille, température, statut SMART, firmware. Faits bruts. |
 | `thermal_profile`            | Températures CPU/GPU, fréquences courantes, utilisation/VRAM GPU. Faits bruts. |
+| `monitor_system_health`      | Mesure CPU, RAM et température sur une fenêtre de temps configurable (1-600s). Retourne min/max/avg. Params : `duration_seconds` (défaut 10), `interval_seconds` (défaut 2). |
 | `diagnose_antivirus_impact`  | AV/EDR détectés + règles d'exclusion existantes (Windows/macOS/Linux/WSL2) + couverture des chemins dev chauds (`node_modules`, `.git`, …). Faits bruts. |
 
 ## Architecture
